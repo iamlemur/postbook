@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  summary: MyText
+  body: MyText
+  discussion: false
+  draft_status_id: 1
+
+two:
+  title: MyString
+  summary: MyText
+  body: MyText
+  discussion: false
+  draft_status_id: 1
