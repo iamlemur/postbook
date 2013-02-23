@@ -1,4 +1,13 @@
 Postbook::Application.routes.draw do
+
+
+
+  devise_for :authors, path_names: {sign_in: 'login', sign_out: 'logout'},
+              controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  get "authors/new"
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

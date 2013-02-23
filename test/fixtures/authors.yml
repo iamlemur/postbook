@@ -1,13 +1,26 @@
+# == Schema Information
+#
+# Table name: authors
+#
+#  id          :integer          not null, primary key
+#  first_name  :string(255)
+#  last_name   :string(255)
+#  description :string(255)
+#  location_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
   first_name: MyString
   last_name: MyString
-  description: MyText
+  description: MyString
   location_id: 1
 
 two:
   first_name: MyString
   last_name: MyString
-  description: MyText
+  description: MyString
   location_id: 1
