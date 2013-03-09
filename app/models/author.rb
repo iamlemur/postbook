@@ -25,6 +25,14 @@ class Author < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
 
+  has_many :favorite_authors, :as => :favoritable
+  has_many :favorite_posts, :as => :favoritable
+  has_many :favorite_characters, :as => :favoritable
+  has_many :favorite_books, :as => :favoritable
+
+  has_many :posts
+  
+
   def self.from_omniauth(auth)
   	where(auth.slice(:provider, :uid)).first_or_create do |author|
   		author.provider = auth.provider

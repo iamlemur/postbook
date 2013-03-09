@@ -2,11 +2,32 @@ Postbook::Application.routes.draw do
 
 
 
+  get "characters/index"
+
+  get "characters/new"
+
+  get "books/index"
+
+  get "books/new"
+
+  get "posts/index"
+
+  get "posts/new"
+
   devise_for :authors, path_names: {sign_in: 'login', sign_out: 'logout'},
               controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get "authors/new"
 
   root :to => "home#index"
+
+  resources :posts do
+    resources :favorites
+  end
+
+  resources :characters do
+    resources :favorites
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

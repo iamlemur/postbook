@@ -1,0 +1,9 @@
+<h1>Favorites</h1>
+
+<div id="favorites">
+<% @favorites.each do |favorite| %>
+	<div class="favorite">
+		<%= favorite.author_id %>
+	</div>
+<% end %>
+</div>

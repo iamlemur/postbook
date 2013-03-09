@@ -15,4 +15,6 @@
 
 class Character < ActiveRecord::Base
   attr_accessible :description, :discussion, :first_name, :full_name, :last_name, :post_id
+  has_many :favorites, as: :favoritable
+
 end
