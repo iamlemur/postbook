@@ -30,7 +30,7 @@ class Author < ActiveRecord::Base
   has_many :favorite_characters, :as => :favoritable
   has_many :favorite_books, :as => :favoritable
 
-  has_many :posts
+  has_many :posts #dependent destroy?
   
 
   def self.from_omniauth(auth)

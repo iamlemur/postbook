@@ -16,10 +16,13 @@ Postbook::Application.routes.draw do
 
   devise_for :authors, path_names: {sign_in: 'login', sign_out: 'logout'},
               controllers: {omniauth_callbacks: "omniauth_callbacks"}
-  get "authors/new"
 
   root :to => "home#index"
+  
+  match '/forbidden', to: 'static_pages#forbidden'
 
+
+  resources :authors
   resources :posts do
     resources :favorites
   end

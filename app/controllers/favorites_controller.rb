@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-
+  
 	before_filter :load_favoritable
 
   def index
