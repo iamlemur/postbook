@@ -1,0 +1,26 @@
+ <h1>Posts#edit</h1>
+<div class="row">
+  <div class="span6 offset3">
+      <%= form_for(@post) do |f| %>
+
+       <%= render 'shared/error_messages' %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.label :summary %>
+        <%= f.text_area :summary %>
+
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+
+        <%= f.label :discussion %>
+        <%= f.check_box :discussion %>
+
+        <%= f.label :draft_status_id %>
+        <%= f.number_field :draft_status_id %>
+
+        <%= f.submit "Update post", class: "btn btn-large btn-primary" %>
+      <% end %>
+  </div>
+</div>
