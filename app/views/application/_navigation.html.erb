@@ -1,0 +1,32 @@
+
+  <nav id="topNav" class="clearfix">
+  <div class="outerWrapper">
+  <div class="innerWrapper">
+	<h1 id="postbookLogo">
+		<%= link_to(root_path, :title => "Go to Postbook Homepage") do %>
+			Postbook
+			<%= image_tag("postbookLogo.png", :alt => "Postbook") %>
+		<% end %>
+	</h1>
+	<%= render_navigation %>
+	<form>
+	<input type="text" name="q" />
+	</form>
+	<% if(author_signed_in?) %>
+	<ul id="personalNav">
+		<li><span><%= current_author.username %></span>
+		<div class="dropdown">
+			<div class="tip"></div>
+			<ul>
+				<li><a href="/dashboard"><span>dashboard</span></a></li>
+				<li><a href="/settings"><span>settings</span></a></li>
+				<li><a href="/profile"><span>profile</span></a></li>
+				<li><span></span></li>
+				<li><a href="/signout"><span>signout</span></a></li>
+			</ul>
+		</div></li>
+	</ul>
+	<% end %>
+	</div>
+	</div>
+	</nav>

@@ -1,3 +1,23 @@
 <li>
-  <%= link_to post.title, post %>
+  <article>
+  	<header>
+  	<h1>
+  		<%= link_to post.title, post %>
+  	</h1>
+  	<small>published by <%= link_to post.author.username, post.author %> <%= time_tag post.updated_at, time_ago_in_words(post.updated_at) %> ago <span class="favorite_count">&hearts; 41</span> 
+  	</small>
+  </header>
+  	<p><%= post.body %></p>
+  	<section>
+  		<h2>characters:</h2>
+  	</section>
+  	<section>
+  		<h2>tags</h2>
+  	</section>
+  	<%= link_to(post, :class => "readMore") do %>
+  		<%= image_tag("arrow.png") %>
+  		read more
+  	<% end %>
+
+  </article>
 </li>

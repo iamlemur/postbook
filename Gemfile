@@ -20,13 +20,15 @@ end
 group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'static'
+  gem 'sass-rails',   '3.2.5'
 end
 
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'cancan'
 gem 'jquery-rails'
+gem 'bootstrap-sass', '2.1'
+gem "simple-navigation"
 
 group :production do
   gem 'pg', '0.12.2'

@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:post_show_published] = "%B %e, %Y"
