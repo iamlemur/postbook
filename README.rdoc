@@ -1,18 +1,20 @@
-== Welcome to Postbook
+= Welcome to Postbook
 
 To log in, find a user in the Rails console (Author.find(x)), proceed to authors/login and user the user's username and the password is 'password'
 
 Currently, the user's 'control panel' menu is hidden when not logged in, should replace with a link to log in (and log in via twitter, etc.)
 
-== Gems Installed (and implemented)
 
-= Devise
+
+= Gems Installed (and implemented)
+
+== Devise
 
 To configure Devise layouts (such as login form), see app/views/devise
 
 Devise has been configured to use the username (not the email) as the key in config/initializers/devise.rb
 
-= OmniAuth
+== OmniAuth
 
 I'm only using OmniAuth through Twitter right now. This is also configured in the Devise configuration file, config/initializers/devise.rb
 
@@ -20,7 +22,7 @@ Devise and OmniAuth are both configured further through the routes file.
 
 See app/controllers/omniauth_callbacks_controller.rb for further configuration
 
-= CanCan
+== CanCan
 
 Configured through the application controller by setting a current_ability method and sending to a static forbidden file for CanCan exceptions
 
@@ -30,50 +32,64 @@ Ability.rb model in app/models/ability.rb is where all abilities for each user t
 
 See app/views/posts/show.html.erb at bottom for example (example of possible edit link for post when post viewed is created by current user)
 
-= Simple Navigation
-
-Configured at config/navigation.rb
-
-Used in navigation partial at app/views/application/_navigation.html.erb for mainNav only.  Only shows posts and authors because those are only models/controllers implemented so far. Will implement for subnavs such as related posts, etc. (e.g. below the post title on the 'show' post view).
-
-= Bootstrap w/ Sass
-
-Included in CSS and Javascript but not used yet. Might be useful for pagination, etc. (but I believe the plan is for infinite scrolling)
-
-= Time Formats
-
-I've started a file for custom time formats in config/initializers/time_formats.rb
-
-An example of their use is at app/views/posts/show.html.erb
-
-== Database
+== Faker
 
 The Faker gem is used to create fake content for our populate command.
 
 The database is populated right now, but to reset it, you can perform the following actions:
 
-rake db:reset
-
-Then to re-populate the databse, run the following command:
-
-rake db:populate
+1. rake db:reset
+2. Then to re-populate the databse, run the following command:
+3. rake db:populate
 
 This will create 99 authors with 3 posts each.
 
-== Controllers and Views
 
-= Posts
+= Controllers and Views
+
+== Posts
 
 Right now, you can create a post, view a post, and edit a post. You can also view all posts.
 
 Viewing all posts and a single post are partially implemented in the Postbook design.
 
-= Authors
+== Authors
 
-Right now, you can view an author and create an author (sign up). Neither are implemented in the postbook design and may be blocked by CanCan at the moment
+Right now, you can view an author and create an author (sign up). Neither are implemented in the postbook design and may be blocked by CanCan at the moment.
 
-= Issues, etc.
+== Models
+
+Details to come.
+
+
+
+
+= General Development Notes
+
+== Simple Navigation
+
+Configured at config/navigation.rb
+
+Used in navigation partial at app/views/application/_navigation.html.erb for mainNav only.  Only shows posts and authors because those are only models/controllers implemented so far. Will implement for subnavs such as related posts, etc. (e.g. below the post title on the 'show' post view).
+
+== Bootstrap w/ Sass
+
+Included in CSS and Javascript but not used yet. Might be useful for pagination, etc. (but I believe the plan is for infinite scrolling)
+
+== Time Formats
+
+I've started a file for custom time formats in config/initializers/time_formats.rb
+
+An example of their use is at app/views/posts/show.html.erb
+
+
+
+= Issues, Tasks, etc.
+
+Move the following into Github Issues:
 
 1. Should prevent highlight of search box caused by Bootstrap
 2. Incorporate Sign Up links when not logged in and begin this workflow to expand CanCan authorization
 3. Finish basic CRUD controller, models, and views for posts and authors
+
+
