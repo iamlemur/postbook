@@ -38,14 +38,18 @@ The Faker gem is used to create fake content for our populate command.
 
 The database is populated right now, but to reset it, you can perform the following actions:
 
-1. rake db:reset
-2. Then to re-populate the databse, run the following command:
-3. rake db:populate
+	rake db:reset
+
+Then to re-populate the databse, run the following command:
+
+	rake db:populate
 
 This will create 99 authors with 3 posts each.
 
 
-= Controllers and Views
+
+
+= Models, Controllers, and Views
 
 == Posts
 
@@ -56,10 +60,6 @@ Viewing all posts and a single post are partially implemented in the Postbook de
 == Authors
 
 Right now, you can view an author and create an author (sign up). Neither are implemented in the postbook design and may be blocked by CanCan at the moment.
-
-== Models
-
-Details to come.
 
 
 
