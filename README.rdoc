@@ -74,6 +74,6 @@ Right now, you can view an author and create an author (sign up). Neither are im
 
 = Issues, etc.
 
-Should prevent highlight of search box caused by Bootstrap
-Incorporate Sign Up links when not logged in and begin this workflow to expand CanCan authorization
-Finish basic CRUD controller, models, and views for posts and authors
+1. Should prevent highlight of search box caused by Bootstrap
+2. Incorporate Sign Up links when not logged in and begin this workflow to expand CanCan authorization
+3. Finish basic CRUD controller, models, and views for posts and authors
