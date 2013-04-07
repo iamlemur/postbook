@@ -12,8 +12,9 @@
 	<form>
 	<input type="text" name="q" />
 	</form>
-	<% if(author_signed_in?) %>
 	<ul id="personalNav">
+
+		<% if(author_signed_in?) %>
 		<li><span><%= current_author.username %></span>
 		<div class="dropdown">
 			<div class="tip"></div>
@@ -22,11 +23,14 @@
 				<li><a href="/settings"><span>settings</span></a></li>
 				<li><a href="/profile"><span>profile</span></a></li>
 				<li><span></span></li>
-				<li><a href="/signout"><span>signout</span></a></li>
+				<!-- <li><a href="/logout"><span>logout</span></a></li> -->
+				<li><%= link_to "Logout", destroy_author_session_path, :method => :delete %></li>
 			</ul>
 		</div></li>
+		<% else %>
+		<li><%= link_to "Login", "/authors/login" %> | <%= link_to "Sign up", "/authors/sign_up" %><br /></li>
+		<% end %>
 	</ul>
-	<% end %>
 	</div>
 	</div>
 	</nav>

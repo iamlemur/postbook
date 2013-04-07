@@ -8,13 +8,19 @@ Currently, the user's 'control panel' menu is hidden when not logged in, should 
 
 = Gems Installed (and implemented)
 
+
 == Devise
+
+https://github.com/plataformatec/devise
 
 To configure Devise layouts (such as login form), see app/views/devise
 
 Devise has been configured to use the username (not the email) as the key in config/initializers/devise.rb
 
+
 == OmniAuth
+
+https://github.com/intridea/omniauth
 
 I'm only using OmniAuth through Twitter right now. This is also configured in the Devise configuration file, config/initializers/devise.rb
 
@@ -22,7 +28,10 @@ Devise and OmniAuth are both configured further through the routes file.
 
 See app/controllers/omniauth_callbacks_controller.rb for further configuration
 
+
 == CanCan
+
+https://github.com/ryanb/cancan
 
 Configured through the application controller by setting a current_ability method and sending to a static forbidden file for CanCan exceptions
 
@@ -32,20 +41,63 @@ Ability.rb model in app/models/ability.rb is where all abilities for each user t
 
 See app/views/posts/show.html.erb at bottom for example (example of possible edit link for post when post viewed is created by current user)
 
+
 == Faker
+
+https://github.com/stympy/faker
 
 The Faker gem is used to create fake content for our populate command.
 
 The database is populated right now, but to reset it, you can perform the following actions:
 
-	rake db:reset
+rake db:reset
 
 Then to re-populate the databse, run the following command:
 
-	rake db:populate
+rake db:populate
 
 This will create 99 authors with 3 posts each.
 
+
+== Simple Navigation
+
+https://github.com/andi/simple-navigation
+
+Configured at config/navigation.rb
+
+Used in navigation partial at app/views/application/_navigation.html.erb for mainNav only.  Only shows posts and authors because those are only models/controllers implemented so far. Will implement for subnavs such as related posts, etc. (e.g. below the post title on the 'show' post view).
+
+
+== Bootstrap w/ Sass
+
+https://github.com/thomas-mcdonald/bootstrap-sass
+
+Included in CSS and Javascript but not used yet. Might be useful for pagination, etc. (but I believe the plan is for infinite scrolling)
+
+
+== jQuery
+
+https://github.com/indirect/jquery-rails
+
+
+== RSpec
+
+https://github.com/rspec/rspec-rails
+
+
+== Factory Girl
+
+https://github.com/thoughtbot/factory_girl_rails
+
+
+== Will Paginate
+
+https://github.com/mislav/will_paginate/wiki
+
+
+== Annotate
+
+https://rubygems.org/gems/annotate
 
 
 
@@ -65,16 +117,6 @@ Right now, you can view an author and create an author (sign up). Neither are im
 
 
 = General Development Notes
-
-== Simple Navigation
-
-Configured at config/navigation.rb
-
-Used in navigation partial at app/views/application/_navigation.html.erb for mainNav only.  Only shows posts and authors because those are only models/controllers implemented so far. Will implement for subnavs such as related posts, etc. (e.g. below the post title on the 'show' post view).
-
-== Bootstrap w/ Sass
-
-Included in CSS and Javascript but not used yet. Might be useful for pagination, etc. (but I believe the plan is for infinite scrolling)
 
 == Time Formats
 
