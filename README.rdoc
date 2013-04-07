@@ -2,8 +2,7 @@
 
 To log in, find a user in the Rails console (Author.find(x)), proceed to authors/login and user the user's username and the password is 'password'
 
-Currently, the user's 'control panel' menu is hidden when not logged in, should replace with a link to log in (and log in via twitter, etc.)
-
+Currently, the author login and sign up links are hard coded. These should be updated to paths (and OmniAuth options) once the Devise routes are completed.
 
 
 = Gems Installed (and implemented)
