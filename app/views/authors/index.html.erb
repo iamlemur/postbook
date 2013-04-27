@@ -1,0 +1,64 @@
+<div role="main" class="main index">
+
+	<div class="body">
+
+		<ul class="full">
+		  <% @authors.each do |author| %>
+			<%= render author %>
+		  <% end %>
+		</ul>
+
+		<aside class="filters">
+			<h2>currently viewing</h2>
+			<form method="GET" action="">
+				<input type="text" name="q" />
+			</form>
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">all authors</a></li>
+				<li><a href="#">popular authors</a></li>
+				<li><a href="#">highest rated authors</a></li>
+				<li><a href="#">my authors</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any posts</a></li>
+				<li><a href="#">specific posts</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any books</a></li>
+				<li><a href="#">specific books</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any characters</a></li>
+				<li><a href="#">specific characters</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any tags</a></li>
+				<li><a href="#">specific tags</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">located anywhere</a></li>
+				<li><a href="#">near me</a></li>
+				<li><a href="#">specific location</a></li>
+			</ul>
+			</nav>
+		</aside>	
+
+	</div>
+
+</div>

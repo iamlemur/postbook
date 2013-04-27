@@ -1,0 +1,22 @@
+<div role="main" class="main id nonsticky">
+  
+  <header>
+    <h1>Edit "<%= @author.username %>"</h1>
+  </header>
+
+  <div class="row">
+    <div class="span6 offset3">
+      <%= form_for(@author) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+
+        <%= f.submit "Update author", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

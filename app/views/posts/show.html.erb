@@ -1,27 +1,26 @@
-  <div role="main" class="main id nonsticky">
+<div role="main" class="main id nonsticky">
+	
   <header>
-	<h1><%= @post.title %></h1>
-	<small>published by 
-		<span class="author"><%= link_to @post.author.username, @post.author %></span>
-		on <%= time_tag @post.updated_at, @post.updated_at.to_formatted_s(:post_show_published) %> <span class="favorite-count">40 &hearts;</span></small>
+		<h1><%= @post.title %></h1>
+		<small>published by 
+			<span class="author"><%= link_to @post.author.username, @post.author %></span>
+			on <%= time_tag @post.updated_at, @post.updated_at.to_formatted_s(:post_show_published) %> <span class="favorite-count">40 &hearts;</span></small>
 		<%= render("nav") %>
   </header>
+
   <div class="read">
-	<div class="content">
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur faucibus ullamcorper. Ut sed eros augue, vel dapibus massa. Etiam egestas gravida mauris, eu condimentum odio tincidunt eu. Pellentesque eu lacus leo, eget commodo velit. Morbi pharetra suscipit turpis eget molestie. Nunc tincidunt, augue sit amet fermentum tristique, magna massa dignissim turpis, ac tincidunt magna leo nec quam. Vestibulum elit purus, condimentum sed consequat vitae, commodo vestibulum sem. Curabitur quis tellus risus, vitae auctor ante. Duis lobortis sodales erat, at ullamcorper odio aliquam eu. Integer diam lorem, ultrices vel tempor venenatis, egestas quis libero. Donec metus sem, aliquam at semper eu, porta elementum massa. Nulla sit amet purus quis augue sodales molestie vitae ac velit. Duis mollis justo lacinia neque semper ac elementum justo interdum. Praesent vehicula scelerisque consectetur.</p>
+		<div class="content">
 
-	<p>Nunc tincidunt nisi quis tortor porta ac adipiscing est vehicula. Integer massa quam, pharetra et venenatis pretium, tempor at sapien. Vivamus euismod aliquam massa id pellentesque. Integer sed augue leo. Morbi pellentesque mi vel est tincidunt quis bibendum augue blandit. Suspendisse lacinia est et lorem posuere a tincidunt eros sagittis. Vestibulum turpis lacus, vehicula at feugiat nec, scelerisque et quam. Phasellus faucibus, sem in egestas fringilla, velit sapien fringilla arcu, ac vehicula est augue in sem. Mauris aliquet posuere porta. Ut elementum est id lorem consequat vel sagittis nunc imperdiet. Praesent id ipsum quis risus cursus mollis. Mauris nec interdum tellus. Aenean dolor mi, consectetur ac interdum nec, aliquet sed purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus accumsan placerat felis quis commodo.</p>
+			<% post_grafs = @post.body.split("\n\n") %>
+			<% for graf in post_grafs %>
+				<p><%= graf %></p>
+			<% end %>
 
-	<p>Aenean dolor orci, ornare non accumsan quis, rhoncus vitae diam. Donec malesuada malesuada sapien vitae tincidunt. Nam lobortis cursus ante, et semper tortor pellentesque at. Donec nulla ante, fermentum sed tristique vehicula, ullamcorper sed metus. Vivamus cursus fringilla tellus, eu sollicitudin est posuere laoreet. Donec id pharetra augue. Donec condimentum sodales magna sit amet condimentum. Pellentesque vulputate blandit vehicula. Nam ligula neque, luctus non congue vitae, congue ut mi. Ut et justo turpis, bibendum pulvinar ligula. Donec venenatis, velit in blandit fringilla, quam purus pretium nisi, a pharetra felis est a augue. Integer commodo euismod nulla, eu condimentum diam placerat a. Pellentesque sed sapien ut ligula vestibulum posuere. Curabitur rhoncus est in mauris pulvinar tristique.</p>
+	    <% if can? :update, @post %>
+	      User can update post
+	    <% end %>
 
-	<p>Quisque pharetra est quis eros elementum congue. Integer condimentum, erat nec semper viverra, nibh diam sagittis felis, sit amet sodales lorem ligula vitae risus. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur magna justo, elementum sed convallis sed, semper et ante. Pellentesque non justo libero, vitae luctus mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis felis sed felis ornare fringilla ut imperdiet est. Pellentesque pretium facilisis lacus, vel rhoncus leo accumsan sit amet. Pellentesque placerat, tellus et ultricies volutpat, erat mauris pharetra mauris, id placerat enim nisi vel nibh. Donec ultricies adipiscing dictum. Etiam nec augue in massa aliquam ullamcorper eu at leo. Nullam venenatis euismod felis eget scelerisque. Vivamus ornare nisi vitae mi tempus et rutrum elit euismod. Mauris dapibus adipiscing libero nec pulvinar. Suspendisse adipiscing, metus sit amet fringilla semper, felis lectus pulvinar nisi, id suscipit metus felis sit amet sapien.</p>
+		</div>
+	</div> 
 
-	<p>Vestibulum tempus nisi eu ipsum ultrices eu suscipit eros varius. Etiam viverra neque eget felis malesuada id faucibus nisi gravida. Nulla malesuada lectus interdum lectus placerat hendrerit. Donec iaculis auctor pulvinar. Cras pulvinar cursus tortor non tempus. Morbi facilisis molestie ipsum, posuere venenatis mauris ornare viverra. Ut vel lorem odio, sed consequat nibh. Fusce at dignissim nibh. Nunc tellus lacus, convallis ac sagittis a, vestibulum a quam. Vestibulum ultricies, ante vel lacinia tempor, lorem orci luctus magna, eu ullamcorper justo lacus eget nisi. Aenean sagittis eleifend ultrices. Nam pulvinar condimentum felis, non scelerisque metus mattis id.</p>
-
-    <% if can? :update, @post %>
-      User can update post
-    <% end %>
-
-	</div>
-</div> 
 </div>

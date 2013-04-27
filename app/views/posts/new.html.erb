@@ -1,26 +1,33 @@
-<h1>Posts#new</h1>
-<div class="row">
-  <div class="span6 offset3">
-      <%= form_for(@post) do |f| %>
+<div role="main" class="main id nonsticky">
+  
+  <header>
+    <h1>Create a New Post</h1>
+  </header>
 
-       <%= render 'shared/error_messages' %>
+  <div class="row">
+    <div class="span6 offset3">
+        <%= form_for(@post) do |f| %>
 
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+         <%= render 'shared/error_messages' %>
 
-        <%= f.label :summary %>
-        <%= f.text_area :summary %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
 
-        <%= f.label :body %>
-        <%= f.text_area :body %>
+          <%= f.label :summary %>
+          <%= f.text_area :summary %>
 
-        <%= f.label :discussion %>
-        <%= f.check_box :discussion %>
+          <%= f.label :body %>
+          <%= f.text_area :body %>
 
-        <%= f.label :draft_status_id %>
-        <%= f.number_field :draft_status_id %>
+          <%= f.label :discussion %>
+          <%= f.check_box :discussion %>
 
-        <%= f.submit "Create post", class: "btn btn-large btn-primary" %>
-      <% end %>
+          <%= f.label :draft_status_id %>
+          <%= f.number_field :draft_status_id %>
+
+          <%= f.submit "Create post", class: "btn btn-large btn-primary" %>
+        <% end %>
+    </div>
   </div>
+  
 </div>

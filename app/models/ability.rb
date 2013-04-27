@@ -7,6 +7,11 @@ class Ability
     end
     can :read, Post
     can :create, Post
+    
+    can :update, Author do |author|
+        author == user
+    end
+    can :read, Author
 
     # Define abilities for the passed in user here. For example:
     #

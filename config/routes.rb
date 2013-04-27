@@ -1,7 +1,5 @@
 Postbook::Application.routes.draw do
 
-
-
   get "characters/index"
 
   get "characters/new"

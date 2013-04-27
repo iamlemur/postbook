@@ -1,4 +1,92 @@
-<h1><%= @author.first_name %> <%= @author.last_name %></h1>
-<p><%= @author.email %> 
-	<%= @author.description %>
-</p>
+
+
+<div role="main" class="main id nonsticky">
+
+  <header>
+	<h1><%= @author.username %></h1>
+	<small>72 posts, 12 books, 32 characters <span class="favorite-count">40 &hearts;</span></small>
+	<figure>
+		<div class="image">
+			<img src="./images/author.jpg" class="profile-pic" width="100%" />
+		</div>
+		<figcaption>
+			<div class="tip"></div>
+			<table>
+			<tbody>
+			<tr>
+				<th>Details</th>
+				<td>Male, 36 (Abu Dhabi, UAE)</td>
+			</tr>
+			<tr>
+				<th>Connect</th>
+				<td><a href="#">Website</a> // <a href="#">Twitter</a> // <a href="#">Facebook</a></td>
+			</tr>
+			<tr>
+				<th>Contributions</th>
+				<td><%= @posts.count %> posts, 12 books, 32 characters</td>
+			</tr>
+			<tr>
+				<th>Favorites</th>
+				<td>14 books, 3 posts, 14 characters, 10 authors</td>
+			</tr>
+			<tr>
+				<th>Activity</th>
+				<td>Joined in March 2007, last active today</td>
+			</tr>
+			</tbody>
+			</table>
+		</figcaption>
+	</figure>
+	<%= render("nav") %>
+  </header>
+
+  <div class="activity contentContainer">
+	<div class="column column5">
+		<article class="spacey">
+			<h2>biography</h2>
+			<p><%= @author.description %></p>
+		</article>
+		<article>
+			<h2>posts</h2>
+			<ul>
+				<% @posts.each do |post| %>
+				<li><%= link_to post.title, post %> <span class="divider">//</span> <small>post</small></li>
+				<% end %>
+			</ul>
+		</article>
+	</div>
+	<div class="column column3">
+		<article>
+			<h2>favorite of</h2>
+			<ul class="avatars">
+				<li><a href="#"><img src="./images/avatar.png" width="30" height="30" alt="username" /></a></li>
+				<li><a href="#"><img src="./images/avatar.png" width="30" height="30" alt="username" /></a></li>
+			</ul>
+			<p>plus <a href="#">34 more...</a></p>
+		</article>
+		<article>
+			<h2>most popular</h2>
+			<ol>
+				<li><a href="#">Dissipation of Hunter Feyman</a>
+				<small>post <span class="divider">//</span> 493 favorites</small>
+				</li>
+			</ol>
+		</article>
+		<article>
+			<h2>tags</h2>
+			<ul class="tags">
+				<li><a href="#">duis</a></li>
+				<li><a href="#">ipsum</a></li>
+			</ul>
+		</article>
+		<article>
+			<h2>recent activity</h2>
+			<ul>
+				<li>
+					<small><a href="#">I Wish I Was a Horse, Of Course, Of Course</a> <span class="divider">//</span> post published <time>5 hours ago</time></small>
+				</li>
+			</ul>
+		</article>
+	</div>
+</div> 
+</div>

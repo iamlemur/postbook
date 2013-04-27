@@ -1,9 +1,66 @@
 <div role="main" class="main index">
+
 	<div class="body">
+
 		<ul class="full">
 		  <% @posts.each do |post| %>
 			<%= render post %>
 		  <% end %>
 		</ul>
+
+		<aside class="filters">
+			<%= link_to(new_post_path, :class => "create") do %>
+	  		<%= image_tag("plus.png") %>
+	  		create a post
+	  	<% end %>
+			<h2>currently viewing</h2>
+			<form method="GET" action="">
+				<input type="text" name="q" />
+			</form>
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">most recent books</a></li>
+				<li><a href="#">popular books</a></li>
+				<li><a href="#">highest rated books</a></li>
+				<li><a href="#">my books</a>
+				<ul>
+					<li><a href="#">drafts</a></li>
+					<li><a href="#">previews</a></li>
+					<li><a href="#">published</a></li>
+					<li><a href="#">favorites</a></li>
+				</ul></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">published anytime</a></li>
+				<li><a href="#">specific date</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">by anyone</a></li>
+				<li><a href="#">specific author</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any tags</a></li>
+				<li><a href="#">specific tags</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<ul>
+				<li class="activeColored"><a href="#">any characters</a></li>
+				<li><a href="#">specific characters</a></li>
+			</ul>
+			</nav>
+		</aside>	
+
 	</div>
+
 </div>
