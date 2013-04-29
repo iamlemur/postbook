@@ -1,23 +1,10 @@
 	<nav>
 		<div>
 			<section class="more">
-				<ul>
-					<li class="active"><a href="./read">read</a></li>
-					<li><a href="#">details</a></li>
-					<li><a href="#">comment</a></li>
-					<li><a href="#">discuss</a></li>
-					<% if can? :update, @post %>
-      		<li><%= link_to "edit", edit_post_path %></li>
-    			<% end %>
-				</ul>
+				<%= render_navigation(:context => :posts) %>
 			</section><section class="related">
 				<h2>related:</h2>
-				<ul>
-					<li><a href="#">posts</a></li>
-					<li><a href="#">books</a></li>
-					<li><a href="#">characters</a></li>
-					<li><a href="#">authors</a></li>
-				</ul>
+				<%= render_navigation(:context => :related_posts) %>
 			</section>
 		</div>
 	</nav>

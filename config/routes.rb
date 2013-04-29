@@ -11,6 +11,7 @@ Postbook::Application.routes.draw do
   get "posts/index"
 
   get "posts/new"
+  get "posts/edit"
 
   devise_for :authors, path_names: {sign_in: 'login', sign_out: 'logout'},
               controllers: {omniauth_callbacks: "omniauth_callbacks"}

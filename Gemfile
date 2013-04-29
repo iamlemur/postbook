@@ -28,7 +28,8 @@ gem 'omniauth-twitter'
 gem 'cancan'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '2.1'
-gem "simple-navigation"
+gem 'simple-navigation'
+gem 'simple_form'
 
 group :production do
   gem 'pg', '0.12.2'

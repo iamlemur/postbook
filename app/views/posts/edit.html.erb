@@ -1,11 +1,14 @@
 <div role="main" class="main id nonsticky">
   
   <header>
-    <h1>Edit "<%= @post.title %>"</h1>
+    <h1><%= @post.title %></h1>
+    <small>published by 
+      <span class="author"><%= link_to @post.author.username, @post.author %></span>
+      on <%= time_tag @post.updated_at, @post.updated_at.to_formatted_s(:post_show_published) %> <span class="favorite-count">40 &hearts;</span></small>
+    <%= render("nav") %>
   </header>
 
-  <div class="row">
-    <div class="span6 offset3">
+  <div class="edit">
       <%= form_for(@post) do |f| %>
 
        <%= render 'shared/error_messages' %>
@@ -23,11 +26,10 @@
         <%= f.check_box :discussion %>
 
         <%= f.label :draft_status_id %>
-        <%= f.number_field :draft_status_id %>
+        <%= f.collection_select :draft_status_id, DraftStatus.all, :id, :value, {}, { :multiple => false } %>
 
         <%= f.submit "Update post", class: "btn btn-large btn-primary" %>
       <% end %>
-    </div>
   </div>
   
 </div>
