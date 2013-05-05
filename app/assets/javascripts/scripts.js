@@ -34,7 +34,7 @@ $(document).ready(function() {
 	$("body").mousemove(function() {
 //		$(".hoverbubble").remove();
 	});
-		$("header small span.author").qtip(
+/*		$("header small span.author").qtip(
 		{
 			content: {
 				// Set the text to an image HTML string with the correct src URL to the loading image you want to use
@@ -68,7 +68,17 @@ $(document).ready(function() {
 			context.fill();
 			context.closePath();
 			tipContainer.append(tip);
-		}
+		}*/
+		if($('.pagination').length) {
+			$(window).scroll(function() {
+				url = $('.pagination .next_page').attr('href');
+				if(url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+					$('.pagination').text("Fetching more products...");
+					$.getScript(url);
+				}
+			});
+	    	$(window).scroll()
+	    }
 });
 
 

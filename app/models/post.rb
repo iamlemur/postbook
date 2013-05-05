@@ -13,7 +13,8 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :body, :discussion, :draft_status_id, :summary, :title
+  attr_accessible :body, :discussion, :draft_status_id, :summary, :title, :file
+  attr_accessor :file
   has_many :favorites, as: :favoritable
   belongs_to :author
 

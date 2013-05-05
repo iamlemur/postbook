@@ -9,26 +9,15 @@
   </header>
 
   <div class="edit">
-      <%= form_for(@post) do |f| %>
-
-       <%= render 'shared/error_messages' %>
-
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-
-        <%= f.label :summary %>
-        <%= f.text_area :summary %>
-
-        <%= f.label :body %>
-        <%= f.text_area :body %>
-
-        <%= f.label :discussion %>
-        <%= f.check_box :discussion %>
-
-        <%= f.label :draft_status_id %>
-        <%= f.collection_select :draft_status_id, DraftStatus.all, :id, :value, {}, { :multiple => false } %>
-
-        <%= f.submit "Update post", class: "btn btn-large btn-primary" %>
+      <%= semantic_form_for @post do |f| %>
+        <%= f.inputs do %>
+          <%= f.input :title %>
+          <%= f.input :summary %>
+          <%= f.input :body %>
+          <%= f.input :file, :as => :file %>
+          <%= f.input :draft_status_id, :as => :radio, :collection => DraftStatus.all %>
+        <% end %>
+        <%= f.actions %>
       <% end %>
   </div>
   

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_author!, except: [:index, :show]
 
   def index
-    @posts = Post.paginate(page: params[:page])
+    @posts = Post.paginate(page: params[:page]).per_page(15)
   end
 
   def create
@@ -32,6 +32,10 @@ class PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
+
+    file_data = params[:post][:file].read
+    text = Yomu.read :text, file_data
+    logger.debug "#{text}"
 
     respond_to do |format|
       if @post.update_attributes(params[:post])

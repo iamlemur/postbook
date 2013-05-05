@@ -16,3 +16,4 @@
 //= require modernizr-2.5.3.min.js
 //= require jquery-1.7.1.min.js
 //= require waypoints.min.js
+//= require jquery.infinitescroll.min.js

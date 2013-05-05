@@ -29,7 +29,9 @@ gem 'cancan'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '2.1'
 gem 'simple-navigation'
-gem 'simple_form'
+gem 'formtastic'
+gem "paperclip", "~> 3.0"
+gem 'yomu'
 
 group :production do
   gem 'pg', '0.12.2'
