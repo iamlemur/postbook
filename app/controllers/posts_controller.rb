@@ -33,9 +33,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    file_data = params[:post][:file].read
-    text = Yomu.read :text, file_data
-    logger.debug "#{text}"
+    if params[:post][:file]
+      file_data = params[:post][:file].read
+      text = Yomu.read :text, file_data
+      params[:post][:body] = text
+    end
 
     respond_to do |format|
       if @post.update_attributes(params[:post])

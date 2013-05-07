@@ -1,12 +1,14 @@
 <div role="main" class="main index">
 
 	<div class="body">
-
-		<ul class="full">
-		  <% @authors.each do |author| %>
-			<%= render author %>
-		  <% end %>
-		</ul>
+		<main>
+			<ul class="full">
+			  <% @authors.each do |author| %>
+				<%= render author %>
+			  <% end %>
+			</ul>
+			<%= will_paginate @authors %>
+		</main>
 
 		<aside class="filters">
 			<h2>currently viewing</h2>

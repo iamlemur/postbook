@@ -1,14 +1,14 @@
 <div role="main" class="main index">
 
 	<div class="body">
-
-		<ul class="full">
-		  <% @posts.each do |post| %>
-			<%= render post %>
-		  <% end %>
-		</ul>
-		<%= will_paginate @posts %>
-
+		<main>
+			<ul class="full">
+			  <% @posts.each do |post| %>
+				<%= render post %>
+			  <% end %>
+			</ul>
+			<%= will_paginate @posts %>
+		</main>
 		<aside class="filters">
 			<%= link_to(new_post_path, :class => "create") do %>
 	  		<%= image_tag("plus.png") %>
